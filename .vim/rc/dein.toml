@@ -19,6 +19,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if   = '''! has('nvim')'''
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
 
