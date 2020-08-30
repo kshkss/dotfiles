@@ -1,0 +1,10 @@
+[user]
+	email = kshkss@users.noreply.github.com
+	name = Akishika Issui
+[core]
+	editor = vim
+[merge]
+	ff = false
+[pull]
+	ff = only
+
