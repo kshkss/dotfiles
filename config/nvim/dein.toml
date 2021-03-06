@@ -1,0 +1,69 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.vim'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'Shougo/context_filetype.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add ='''
+source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
+'''
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if   = '''! has('nvim')'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if   = '''! has('nvim')'''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hood_add = '''
+let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'vim-scripts/Vim-R-plugin'
+on_ft = 'r'
+
+[[plugins]]
+repo = 'eigenfoo/stan-vim'
+on_ft = 'stan'
+
