@@ -5,7 +5,7 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
-repo = 'Shougo/denite.vim'
+repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
@@ -38,32 +38,4 @@ repo = 'osyo-manga/vim-anzu'
 repo = 'machakann/vim-highlightedyank'
 
 [[plugins]]
-repo = 'roxma/nvim-yarp'
-if   = '''! has('nvim')'''
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if   = '''! has('nvim')'''
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-hood_add = '''
-let g:rustfmt_autosave = 1
-'''
-
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'vim-scripts/Vim-R-plugin'
-on_ft = 'r'
-
-[[plugins]]
-repo = 'eigenfoo/stan-vim'
-on_ft = 'stan'
-
+repo = 'simeji/winresizer'

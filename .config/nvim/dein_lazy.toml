@@ -1,0 +1,26 @@
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hood_add = '''
+let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'vim-scripts/Vim-R-plugin'
+on_ft = 'r'
+
+[[plugins]]
+repo = 'eigenfoo/stan-vim'
+on_ft = 'stan'
+
+[[plugins]]
+repo = 'mfussenegger/nvim-dap'
+on_ft = ['rust', 'c++', 'python']
