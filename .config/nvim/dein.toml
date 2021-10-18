@@ -18,6 +18,16 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/neosnippet.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+depends = 'Shougo/neosnippet.vim'
+
+[[plugins]]
 repo = 'junegunn/fzf'
 
 [[plugins]]

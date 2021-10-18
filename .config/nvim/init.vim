@@ -29,3 +29,6 @@ endif
 filetype plugin indent on
 syntax enable
 
+if dein#check_install()
+  call dein#install()
+endif
