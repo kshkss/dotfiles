@@ -2,9 +2,9 @@ set hidden
 
 " settings for languages
 let g:LanguageClient_serverCommands = {
-            \ 'cpp': ['/usr/bin/clangd'],
-            \ 'rust': ['/usr/bin/rustup', 'run', 'stable', 'rls'],
-            \ 'python': ['/usr/bin/pyls'],
+            \ 'cpp': ['clangd'],
+            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+            \ 'python': ['pyls'],
             \ }
 
 augroup LanguageClient_config

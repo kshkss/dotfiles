@@ -9,3 +9,6 @@ call deoplete#custom#option('enable_smart_case', 1)
 call deoplete#custom#option('gfile#enable_buffer_path', 1)
 call deoplete#custom#option('max_list', 10000)
 
+inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+	\ neosnippet#expandable_or_jumpable() ?
+	\    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"

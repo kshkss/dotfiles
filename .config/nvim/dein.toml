@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
@@ -9,6 +6,9 @@ repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -21,21 +21,6 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 repo = 'Shougo/neosnippet.vim'
 hook_add = '''
 source ~/.config/nvim/plugins/neosnippet.rc.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-depends = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'junegunn/fzf'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_add ='''
-source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
 '''
 
 [[plugins]]
