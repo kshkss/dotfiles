@@ -10,6 +10,10 @@ let g:rustfmt_autosave = 1
 '''
 
 [[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+on_ft = ['python']
+
+[[plugins]]
 repo = 'Yggdroot/indentLine'
 on_ft = ['python']
 

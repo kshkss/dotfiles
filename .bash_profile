@@ -1,9 +1,5 @@
 # /etc/skel/.bash_profile
 
-# pyenv configuration
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-
 # This file is sourced by bash for login shells.  The following line
 # runs your .bashrc and is recommended by the bash info pages.
 if [[ -f ~/.bashrc ]] ; then
