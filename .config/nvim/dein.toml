@@ -25,6 +25,9 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
+hook_add = '''
+colorscheme onedark
+'''
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
