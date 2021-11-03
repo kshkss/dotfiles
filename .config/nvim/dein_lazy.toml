@@ -1,4 +1,8 @@
 [[plugins]]
+repo = 'ujihisa/neco-look'
+on_event = 'InsertEnter'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
