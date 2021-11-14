@@ -7,8 +7,8 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#enable()
 
 " Customize settings on a filetype
-call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh'], 'sources', ['nvim-lsp', 'around', 'file'])
-call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh'], 'sourceOptions', {
+call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh', 'elm'], 'sources', ['nvim-lsp', 'around', 'file'])
+call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh', 'elm'], 'sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank']},
