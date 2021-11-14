@@ -12,6 +12,7 @@ make install
 * tmux
 * deno
 * direnv
+* commitizen / commitizen-go
 
 ## Language servers
 ### Rust
