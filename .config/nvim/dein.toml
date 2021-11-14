@@ -17,6 +17,9 @@ source ~/.config/nvim/plugins/ddc.rc.vim
 repo = 'Shougo/ddc-around'
 
 [[plugins]]
+repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
 
 [[plugins]]

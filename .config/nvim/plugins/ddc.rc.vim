@@ -1,4 +1,4 @@
-call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sources', ['around', 'file'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
@@ -7,7 +7,7 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#enable()
 
 " Customize settings on a filetype
-call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh'], 'sources', ['around', 'nvim-lsp'])
+call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh'], 'sources', ['nvim-lsp', 'around', 'file'])
 call ddc#custom#patch_filetype(['c', 'cpp', 'rust', 'python', 'sql', 'sh'], 'sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
