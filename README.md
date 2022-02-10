@@ -17,7 +17,7 @@ make install
 ## Language servers
 ### Rust
 ```
-rustup component add rls
+pacman -S rust-analyzer
 ```
 
 ### Python
