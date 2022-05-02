@@ -1,27 +1,50 @@
 [[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/ddc.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+hook_add = '''
+call popup_preview#enable()
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-vsnip.rc.vim
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'Shougo/context_filetype.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/deoplete.rc.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/neosnippet.rc.vim
-'''
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
@@ -43,4 +66,26 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+lua << EOF
+require('nvim_treesitter_rc')
+EOF
+'''
+
+[[plugins]]
+repo = 'ray-x/lsp_signature.nvim'
+#on_source = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+#on_ft = ['c++', 'rust', 'python', 'sql', 'sh']
+depends = ['ray-x/lsp_signature.nvim']
+hook_add ='''
+lua << EOF
+require('lspconfig_rc')
+EOF
+'''
 

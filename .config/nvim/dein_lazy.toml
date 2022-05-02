@@ -1,17 +1,6 @@
 [[plugins]]
-repo = 'ujihisa/neco-look'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-[[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
-hood_add = '''
-let g:rustfmt_autosave = 1
-'''
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
@@ -22,27 +11,10 @@ repo = 'Yggdroot/indentLine'
 on_ft = ['python']
 
 [[plugins]]
-repo = 'vim-scripts/Vim-R-plugin'
-on_ft = ['r']
-
-[[plugins]]
-repo = 'eigenfoo/stan-vim'
-on_ft = ['stan']
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-on_ft = ['c++', 'rust', 'python']
-rev = 'next'
-build = 'bash install.sh'
-hook_add ='''
-source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
-'''
-
-[[plugins]]
 repo = 'mfussenegger/nvim-dap'
 on_ft = ['rust', 'c++', 'python']
-
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 on_ft = ['rust', 'python']
+
