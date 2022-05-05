@@ -8,6 +8,8 @@ source ~/Git/zsh-snap/znap.zsh  # Start Znap
 # `znap source` automatically downloads and starts your plugins.
 znap source marlonrichert/zsh-autocomplete
 
+setopt share_history
+
 # Use powerline
 USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
