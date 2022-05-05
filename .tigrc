@@ -1,6 +1,7 @@
 bind main    B ?git rebase -i %(commit)
 bind main    <Ctrl-x> !git checkout -b "%(prompt Enter a new branch name: )" %(commit)
 bind main    <Esc>x ?git reset --hard %(commit)
+bind main    ! ?git revert %(commit)
 bind diff    B ?git rebase -i %(commit)
 bind status  C !git cz
 bind status  + !git commit --amend
