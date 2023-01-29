@@ -34,8 +34,9 @@ return require("lazy").setup({
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = function()
 			require("bufferline").setup {}
+			vim.keymap.set("n", "<TAb>", "<Cmd>BufferLineCycleNext<CR>")
+			vim.keymap.set("n", "<S-TAb>", "<Cmd>BufferLineCyclePrev<CR>")
 		end,
-		enabled = false,
 	},
 
 	-- ハイライトとインデント
