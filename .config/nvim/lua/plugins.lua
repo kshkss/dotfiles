@@ -80,6 +80,9 @@ return require("lazy").setup({
 		dependencies = {
 			'dcampos/cmp-snippy',
 		},
+		config = function()
+			require("config/nvim-snippy")
+		end,
 	},
 
 	-- ファジィファインダ兼LSP表示用
