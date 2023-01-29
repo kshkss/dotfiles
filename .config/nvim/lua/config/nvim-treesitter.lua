@@ -1,15 +1,15 @@
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
 	ensure_install = "maintained",
 	highlight = {
 		enable = true,
 		disable = {
-		 'rust',
+			"rust",
 		},
 	},
 	indent = {
 		enable = true,
 		disable = {
-		 'rust',
+			"rust",
 		},
 	},
-}
+})
