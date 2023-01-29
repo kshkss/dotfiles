@@ -1,6 +1,9 @@
 vim.opt.winblend = 10
 vim.opt.termguicolors = true
 
+-- ESC*2 でハイライトやめる
+vim.keymap.set("n", "<Esc><Esc>", ":<C-u>set nohlsearch<Return>", opts)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
