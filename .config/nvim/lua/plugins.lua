@@ -22,10 +22,9 @@ return require("lazy").setup({
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 		},
-		confid = function()
+		config = function()
 			require("config/lualine")
 		end,
-		enabled = false,
 	},
 
 	-- 開いているバッファをタブで表示
