@@ -70,6 +70,7 @@ return require("lazy").setup({
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',
 			'dcampos/cmp-snippy',
+			"onsails/lspkind.nvim",
 		},
 	},
 
