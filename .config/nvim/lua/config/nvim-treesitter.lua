@@ -3,13 +3,13 @@ require'nvim-treesitter.configs'.setup {
 	highlight = {
 		enable = true,
 		disable = {
-		 'rust',
+			'rust',
 		},
 	},
 	indent = {
 		enable = true,
 		disable = {
-		 'rust',
+			'rust',
 		},
 	},
 }
