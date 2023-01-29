@@ -75,7 +75,7 @@ return require("lazy").setup({
 
 	-- スニペットツール
 	{
-		'dcampos/nvim-snippy', 
+		'dcampos/nvim-snippy',
 		dependencies = {
 			'dcampos/cmp-snippy',
 		},
