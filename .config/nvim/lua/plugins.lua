@@ -101,4 +101,17 @@ return require("lazy").setup({
 			require("config/indent-blankline")
 		end,
 	},
+
+	-- gitgutterみたいに変更箇所を横に表示する
+	"lewis6991/gitsigns.nvim",
+
+	-- vim-fugitiveみたいにgit diffを見やすくしてくれるやつ
+	{
+		"sindrets/diffview.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			'nvim-tree/nvim-web-devicons',
+		},
+		enabled = false,
+	},
 })
