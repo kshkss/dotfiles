@@ -24,9 +24,9 @@ cmp.setup {
 	sources = {
 		{ name = 'nvim_lsp' },
 		{ name = 'snippy' }, -- For snippy users.
-		{ name = 'path' },
-		{ name = 'buffer' },
-		{ name = 'cmdline' },
+		--{ name = 'path' },
+		--{ name = 'buffer' },
+		--{ name = 'cmdline' },
 	},
 	formatting = {
 		format = require("lspkind").cmp_format({
