@@ -42,7 +42,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- depend on sumneko/lua-language-server and stylua for formatter
-nvim_lsp.sumneko_lua.setup({
+nvim_lsp.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -52,7 +52,6 @@ nvim_lsp.sumneko_lua.setup({
 				version = "LuaJIT",
 			},
 			diagnostics = {
-				enable = true,
 				-- Get the language server to recognize the `vim` global
 				globals = { "vim" },
 			},
@@ -63,15 +62,6 @@ nvim_lsp.sumneko_lua.setup({
 			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
 				enable = false,
-			},
-			config = {
-				format = {
-					enable = true,
-					defaultConfig = {
-						indent_style = "space",
-						indent_size = "2",
-					},
-				},
 			},
 		},
 	},
