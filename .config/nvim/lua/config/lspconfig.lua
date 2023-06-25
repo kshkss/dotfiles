@@ -36,7 +36,7 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "clangd", "rust_analyzer", "pylsp", "sqls", "bashls", "elmls" }
+local servers = { "clangd", "rust_analyzer", "pylsp", "sqlls", "bashls", "elmls" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({ on_attach = on_attach, capabilities = capabilities })
 end
