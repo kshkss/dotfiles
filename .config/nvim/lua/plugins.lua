@@ -71,6 +71,7 @@ return require("lazy").setup({
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',
 			'dcampos/cmp-snippy',
+			'zbirenbaum/copilot-cmp',
 			"onsails/lspkind.nvim",
 		},
 	},
@@ -95,6 +96,27 @@ return require("lazy").setup({
 		config = function()
 			require("config/fzf-lua")
 		end,
+	},
+
+	-- Github Copilot
+	{
+		'zbirenbaum/copilot.lua',
+		config = function()
+			require("copilot").setup {
+				suggestion = { enabled = false },
+				panel = {
+				 enabled = false},
+			 }
+		end
+	},
+	{
+		'zbirenbaum/copilot-cmp',
+		dependencies = {
+			'zbirenbaum/copilot.lua',
+		},
+		config = function()
+			require("copilot_cmp").setup()
+		end
 	},
 
 	-- インデントラインを表示
