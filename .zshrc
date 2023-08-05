@@ -6,6 +6,7 @@
 source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap source` automatically downloads and starts your plugins.
+znap source marlonrichert/zsh-autocomplete
 
 setopt share_history
 
