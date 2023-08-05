@@ -1,9 +1,9 @@
 # Download Znap, if it's not there yet.
-[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+[[ -f ~/.cache/zsh-snap/znap.zsh ]] ||
     git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+        https://github.com/marlonrichert/zsh-snap.git ~/.cache/zsh-snap
 
-source ~/Git/zsh-snap/znap.zsh  # Start Znap
+source ~/.cache/zsh-snap/znap.zsh  # Start Znap
 
 # `znap source` automatically downloads and starts your plugins.
 znap source marlonrichert/zsh-autocomplete
