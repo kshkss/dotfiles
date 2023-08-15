@@ -20,3 +20,9 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
+
+if [[ ! -e ~/.cache/npm ]]; then
+  mkdir -p ~/.cache/npm
+  npm config set prefix ~/.cache/npm
+fi
+export PATH=$HOME/.cache/npm/bin:$PATH
