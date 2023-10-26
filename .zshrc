@@ -26,3 +26,8 @@ if [[ ! -e ~/.cache/npm ]]; then
   npm config set prefix ~/.cache/npm
 fi
 export PATH=$HOME/.cache/npm/bin:$PATH
+
+# ghq cd
+cdrepo() {
+  local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
+}
