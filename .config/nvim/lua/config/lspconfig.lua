@@ -36,27 +36,17 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "clangd", "rust_analyzer", "pylsp", "lua_ls", "fortls", "elmls" }
+local servers = { "clangd", "rust_analyzer", "pylyzer", "lua_ls", "fortls", "elmls" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		settings = {
-			pylsp = {
-				plugins = {
-					-- jump and rename
-					rope_autoimport = {
-						enabled = true,
-					},
-					-- linter
-					ruff = {
-						enabled = true,
-					},
-					-- formatter
-					black = {
-						enabled = true,
-					},
-				},
+			python = {
+				checkOnType = true,
+				diagnostics = true,
+				inlayHints = true,
+				smartCompletion = true
 			},
 			Lua = {
 			-- depend on sumneko/lua-language-server and stylua for formatter
