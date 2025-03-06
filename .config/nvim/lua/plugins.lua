@@ -118,6 +118,55 @@ return require("lazy").setup({
 			require("copilot_cmp").setup()
 		end
 	},
+	{
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		--lazy = false,
+		--version = false,
+		tag = "v0.0.21",
+		opts = {
+			provider = "copilot",
+			auto_suggestions_provider = "copilot",
+			copilot = {
+				endpoint = "https://api.githubcopilot.com",
+				model = "claude-3.7-sonnet", -- ここでClaudeモデルを指定
+				timeout = 30000,
+				temperature = 0,
+				max_tokens = 4096,
+			},
+
+			-- 動作設定
+			behaviour = {
+				auto_suggestions = false,
+				auto_set_highlight_group = true,
+				auto_set_keymaps = true,
+				auto_apply_diff_after_generation = false,
+				support_paste_from_clipboard = false,
+				minimize_diff = true,
+			},
+
+			-- ウィンドウ設定
+			windows = {
+				position = "right",  -- サイドバーの位置
+				wrap = true,        -- テキストの折り返し
+				width = 30,         -- サイドバーの幅
+				-- その他の詳細設定は省略
+			},
+		},
+		build = "make",
+		-- 依存関係の設定
+		dependencies = {
+			-- 必須の依存関係
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			-- オプションの依存関係
+			"hrsh7th/nvim-cmp",
+			"nvim-tree/nvim-web-devicons",
+			"zbirenbaum/copilot.lua",
+			-- その他の拡張機能
+		}
+	},
 
 	-- インデントラインを表示
 	{
