@@ -10,52 +10,54 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local bufnr = args.buf
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		require("lsp_signature").on_attach()
-		local function buf_set_keymap(...)
-			vim.api.nvim_buf_set_keymap(bufnr, ...)
-		end
-		local function buf_set_option(...)
-			vim.api.nvim_buf_set_option(bufnr, ...)
-		end
+		if client.name == "ruff" then
+			-- Disable hover in favor of Pyright
+			client.server_capabilities.hoverProvider = false
+		else
+			require("lsp_signature").on_attach()
+			local function buf_set_keymap(...)
+				vim.api.nvim_buf_set_keymap(bufnr, ...)
+			end
+			local function buf_set_option(...)
+				vim.api.nvim_buf_set_option(bufnr, ...)
+			end
 
-		-- Mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		--buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-		--buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-		buf_set_keymap("n", "<Space>lh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-		--buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-		--buf_set_keymap("n", "<Space>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-		--buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-		--buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-		--buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-		--buf_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-		buf_set_keymap("n", "<Space>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-		--buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-		--buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-		--buf_set_keymap('n', '<Space>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-		buf_set_keymap("n", "<Space>lf", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
+			-- Mappings.
+			-- See `:help vim.lsp.*` for documentation on any of the below functions
+			--buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+			--buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+			buf_set_keymap("n", "<Space>lh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+			--buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+			--buf_set_keymap("n", "<Space>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+			--buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+			--buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+			--buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+			--buf_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+			buf_set_keymap("n", "<Space>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+			--buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+			--buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+			--buf_set_keymap('n', '<Space>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+			buf_set_keymap("n", "<Space>lf", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
+		end
 	end,
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "clangd", "rust_analyzer", "pylsp", "lua_ls", "fortls", "elmls" }
+local servers = { "clangd", "rust_analyzer", "pyright", "ruff", "lua_ls", "fortls", "elmls" }
 vim.lsp.enable(servers)
 
 vim.lsp.config("*", {
 	capabilities = capabilities,
 })
 
-vim.lsp.config("pylsp", {
+vim.lsp.config("pyright", {
 	settings = {
-		python = {
-			checkOnType = true,
-			diagnostics = true,
-			inlayHints = true,
-			smartCompletion = true
+		pyright = {
+			disableOrganizeImports = true,
 		},
-	},
+	}
 })
 
 vim.lsp.config("lua_ls", {
