@@ -4,12 +4,14 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		disable = {
 			"rust",
+			"cpp",
 		},
 	},
 	indent = {
 		enable = true,
 		disable = {
 			"rust",
+			"cpp",
 		},
 	},
 })
