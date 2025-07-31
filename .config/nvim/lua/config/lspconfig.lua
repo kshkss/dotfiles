@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "clangd", "rust_analyzer", "pyright", "ruff", "lua_ls", "fortls", "elmls" }
+local servers = { "clangd", "rust_analyzer", "pyright", "ruff", "lua_ls", "fortls", "elmls", "ts_ls" }
 vim.lsp.enable(servers)
 
 vim.lsp.config("*", {
