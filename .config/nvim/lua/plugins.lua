@@ -105,8 +105,8 @@ return require("lazy").setup({
 			require("copilot").setup {
 				suggestion = { enabled = false },
 				panel = {
-				 enabled = false},
-			 }
+					enabled = false },
+			}
 		end
 	},
 	{
@@ -151,9 +151,9 @@ return require("lazy").setup({
 
 			-- ウィンドウ設定
 			windows = {
-				position = "right",  -- サイドバーの位置
-				wrap = true,        -- テキストの折り返し
-				width = 30,         -- サイドバーの幅
+				position = "right", -- サイドバーの位置
+				wrap = true, -- テキストの折り返し
+				width = 30, -- サイドバーの幅
 				-- その他の詳細設定は省略
 			},
 		},
