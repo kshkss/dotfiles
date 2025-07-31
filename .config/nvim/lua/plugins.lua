@@ -123,16 +123,20 @@ return require("lazy").setup({
 		event = "VeryLazy",
 		--lazy = false,
 		--version = false,
-		tag = "v0.0.21",
+		tag = "v0.0.27",
 		opts = {
 			provider = "copilot",
 			auto_suggestions_provider = "copilot",
-			copilot = {
-				endpoint = "https://api.githubcopilot.com",
-				model = "claude-3.7-sonnet", -- ここでClaudeモデルを指定
-				timeout = 30000,
-				temperature = 0,
-				max_tokens = 4096,
+			providers = {
+				copilot = {
+					endpoint = "https://api.githubcopilot.com",
+					model = "claude-3.7-sonnet", -- ここでClaudeモデルを指定
+					timeout = 30000,
+					extra_request_body = {
+						temperature = 0,
+						max_tokens = 4096,
+					},
+				},
 			},
 
 			-- 動作設定
