@@ -15,7 +15,8 @@ if [[ ! -e ~/.cache/npm ]]; then
   mkdir -p ~/.cache/npm
   npm config set prefix ~/.cache/npm
 fi
-export PATH=$HOME/.cache/npm/bin:$PATH
+export PATH=$PATH:$HOME/.cache/npm/bin
+export PATH=$PATH:$HOME/go/bin
 
 # ghq cd
 cdrepo() {
