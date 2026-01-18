@@ -24,3 +24,4 @@ require "plugins"
 
 vim.cmd "filetype plugin indent on"
 vim.cmd "syntax enable"
+vim.opt.splitright = true

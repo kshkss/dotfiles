@@ -12,3 +12,5 @@ vim.keymap.set("n", "<leader>ls", "<cmd>lua require('fzf-lua').lsp_document_symb
 vim.keymap.set("n", "<leader>lS", "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>")
 vim.keymap.set("n", "<leader>ld", "<cmd>lua require('fzf-lua').diagnostics_document()<CR>")
 vim.keymap.set("n", "<leader>lD", "<cmd>lua require('fzf-lua').diagnostics_workspace()<CR>")
+
+require('fzf-lua').register_ui_select()
