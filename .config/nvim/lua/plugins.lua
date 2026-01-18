@@ -42,6 +42,8 @@ return require("lazy").setup({
 	-- ハイライトとインデント
 	{
 		'nvim-treesitter/nvim-treesitter',
+		branch = "main",
+		build = ':TSUpdate',
 		config = function()
 			require("config/nvim-treesitter")
 		end,
