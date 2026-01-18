@@ -141,7 +141,7 @@ return require("lazy").setup({
 						width = 0.5, -- 80% of screen width
 						--height = 0.8, -- 80% of screen height
 					},
-					auto_insert_mode = true, -- Enter insert mode when opening
+					-- auto_insert_mode = true, -- Enter insert mode when opening
 					headers = {
 						user = '👤 You',
 						assistant = '🤖 Copilot',
