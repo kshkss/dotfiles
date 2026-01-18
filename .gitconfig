@@ -12,3 +12,5 @@
 	repo = /home/akishika/Git/pure
 	repo = /home/akishika/Git/zsh-autocomplete
 	repo = /home/akishika/Git/zsh-snap
+[init]
+	defaultBranch = main
