@@ -147,6 +147,11 @@ return require("lazy").setup({
 						assistant = '🤖 Copilot',
 						tool = '🔧 Tool',
 					},
+					mappings = {
+						reset = {
+							normal = false,
+						}
+					},
 				}
 			end,
 		},
