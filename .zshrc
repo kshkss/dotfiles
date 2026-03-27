@@ -22,3 +22,5 @@ export PATH=$PATH:$HOME/go/bin
 cdrepo() {
   local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
+
+export UV_EXCLUDE_NEWER="30 days"
