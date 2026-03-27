@@ -2,7 +2,7 @@
 	email = kshkss@users.noreply.github.com
 	name = Akishika, Issui
 [core]
-	editor = vim
+	editor = nvim
 [merge]
 	ff = false
 [pull]
