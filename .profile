@@ -2,13 +2,16 @@
 export UV_EXCLUDE_NEWER="30 days"
 
 # Node.js
+if command -v pnpm > /dev/null; then
+	export PNPM_HOME="$HOME/.local/share/pnpm"
+	if [ ! -e $PNPM_HOME ]; then
+		mkdir -p $PNPM_HOME
+	fi
+	pnpm config set minimum-release-age 22000
+	export PATH="$PATH:$PNPM_HOME"
+fi
 if command -v npm > /dev/null; then
-  if [ ! -e "$HOME/.cache/npm" ]; then
-    mkdir -p "$HOME/.cache/npm"
-    npm config set prefix "$HOME/.cache/npm"
-  fi
   npm config set min-release-age 15
-  export PATH="$PATH:$HOME/.cache/npm/bin"
 fi
 
 # Rust

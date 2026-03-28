@@ -3,6 +3,9 @@ cdrepo() {
   local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
 
+alias npm='echo "npm is prohibited. Please use \"pnpm\" instead."'
+alias npx='echo "npx is prohibited. Please use \"pnpm dlx\" instead."'
+
 eval "$(uv generate-shell-completion bash)"
 eval "$(uvx --generate-shell-completion bash)"
 
