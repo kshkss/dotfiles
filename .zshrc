@@ -15,3 +15,6 @@ fi
 cdrepo() {
   local repodir=$(ghq list | fzf -1 +m) && cd $(ghq root)/$repodir
 }
+
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
