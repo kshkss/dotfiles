@@ -1,5 +1,8 @@
 setopt share_history
 
+autoload -Uz compinit
+compinit -u
+
 # Use powerline
 USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
