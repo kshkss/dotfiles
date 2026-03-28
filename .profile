@@ -8,9 +8,8 @@ if command -v npm > /dev/null; then
     npm config set prefix "$HOME/.cache/npm"
   fi
   npm config set min-release-age 15
+  export PATH="$PATH:$HOME/.cache/npm/bin"
 fi
-export PATH="$PATH:$HOME/.node/bin"
-export PATH="$PATH:$HOME/.cache/npm/bin"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
