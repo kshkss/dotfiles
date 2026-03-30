@@ -10,9 +10,6 @@ export PATH="$PATH:$PNPM_HOME"
 if command -v pnpm > /dev/null; then
 	pnpm config set minimum-release-age 22000
 fi
-if command -v npm > /dev/null; then
-  npm config set min-release-age 15
-fi
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/bin"
