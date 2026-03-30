@@ -21,3 +21,9 @@ cdrepo() {
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+if command -v fnm > /dev/null 2>&1; then
+	eval "$(fnm env --use-on-cd --shell zsh)"
+	eval "$(fnm completions --shell zsh)"
+	fnm default lts-latest
+fi
