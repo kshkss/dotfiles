@@ -8,11 +8,25 @@ make install
 ## Binaries
 * zsh
 * tig
-* neovim and pynvim
 * tmux
-* deno
-* direnv
-* commitizen / commitizen-go
+* neovim
+* fzf
+
+## Binaries for neovim plugins
+* python-pynvim
+* nodejs, npm, and neovim
+* ripgrep
+* tree-sitter-cli
+* lua 5.1 and luarocks
+
+## LSP
+* rust-analyzer
+* clangd
+* gopls
+* templ
+* lua-language-server
+* pyright
+* ruff
 
 ## Language servers
 ### Rust
