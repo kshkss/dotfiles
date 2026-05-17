@@ -16,3 +16,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # Go
 export PATH="$PATH:$HOME/go/bin"
+
+# Other binaries
+export PATH="$PATH:$HOME/.local/bin"
