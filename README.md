@@ -29,27 +29,23 @@ make install
 * ruff
 
 ## Language servers
-### Rust
+### C/C++
+```bash
+pacman -S clang
 ```
-pacman -S rust-analyzer
+
+### Rust
+```bash
+rustup component add rust-analyzer
 ```
 
 ### Python
-```
-pip install python-language-server
-```
-
-### Bash
-```
-npm install -g bash-language-server
+```bash
+uv tool install ruff
+uv tool install pyright
 ```
 
-### SQL
-```
-go get github.com/lighttiger2505/sqls
-```
-
-### Elm
-```
-npm install -g elm-format @elm-tooling/elm-language-server
+### Lua
+```bash
+pacman -S lua-language-server
 ```
