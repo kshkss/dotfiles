@@ -15,7 +15,7 @@ eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
 if command -v npm > /dev/null; then
-  if [ ! -e "$HOME/.cache/npm" ]; them
+  if [ ! -e "$HOME/.cache/npm" ]; then
 	  mkdir -p "$HOME/.cache/npm"
 	  npm config set prefix "$HOME/.cache/npm"
   fi
