@@ -12,6 +12,10 @@ make install
 * neovim
 * fzf
 
+## Zsh extensions
+* zsh-autocomplete
+* zsh-autosuggestions
+
 ## Binaries for neovim plugins
 * python-pynvim
 * nodejs, npm, and neovim
