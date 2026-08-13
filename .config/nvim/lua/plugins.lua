@@ -124,6 +124,45 @@ return require("lazy").setup({
 	-- utilities
 	"nvim-lua/plenary.nvim",
 
+	{
+		"olimorris/codecompanion.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			'zbirenbaum/copilot.lua',
+		},
+		keys = {
+			-- leader aa でチャットのトグル
+			{ "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", mode = "n", desc = "CodeCompanion Chat" },
+		},
+		opts = {
+			strategies = {
+				chat = {
+					adapter = "copilot", -- openai, gemini, anthropic, ollama 等を指定
+					roles = {
+						user = '👤 You',
+						llm = '🤖 Copilot',
+					},
+					keymaps = {
+						send = {
+							modes = {
+								n = "<CR>", -- ノーマルモードのEnterで送信
+								i = "<C-s>", -- インサート(edit)モードのCtrl-Sで送信
+							},
+						},
+						close = {
+							modes = {
+								n = "<C-c>", -- ノーマルモードのqで閉じる
+							},
+						},
+					},
+				},
+				inline = { adapter = "copilot" },
+				agent = { adapter = "copilot" },
+			},
+		}
+	},
+
 	-- インデントラインを表示
 	{
 		"lukas-reineke/indent-blankline.nvim",
