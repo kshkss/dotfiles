@@ -11,6 +11,9 @@ make install
 * tmux
 * neovim
 * fzf
+* age
+* sops
+* bitwarden-cli
 
 ## Zsh extensions
 * zsh-autocomplete
