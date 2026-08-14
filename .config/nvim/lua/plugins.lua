@@ -130,6 +130,10 @@ return require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
+		config = function(plugin, opts)
+			load_sops_secrets()
+			require("codecompanion").setup(opts)
+		end,
 		keys = {
 			-- leader aa でチャットのトグル
 			{ "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", mode = "n", desc = "CodeCompanion Chat" },
