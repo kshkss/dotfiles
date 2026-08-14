@@ -156,8 +156,8 @@ return require("lazy").setup({
 						},
 					},
 				},
-				inline = { adapter = "copilot" },
-				agent = { adapter = "copilot" },
+				inline = { adapter = "gemini" },
+				agent = { adapter = "gemini" },
 			},
 			adapters = {
 				http = {
