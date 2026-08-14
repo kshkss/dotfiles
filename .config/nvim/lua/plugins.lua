@@ -139,6 +139,35 @@ return require("lazy").setup({
 			{ "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", mode = "n", desc = "CodeCompanion Chat" },
 		},
 		opts = {
+			prompt_library = {
+				["Custom Commit Message"] = {
+					interaction = "chat",
+					description = "Generate a commit message with commitizen convention",
+					opts = {
+						alias = "commit-cz",
+						is_slash_cmd = true,
+						auto_submit = true,
+					},
+					prompts = {
+						{
+							role = "user",
+							content = function()
+								return string.format(
+									[[Write commit message for the change with commitizen convention. Make sure the title has maximum 50 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit.
+
+```diff
+%s
+```]],
+									vim.fn.system("git diff --no-ext-diff --staged")
+								)
+							end,
+							opts = {
+								contains_code = true,
+							},
+						},
+					},
+				},
+			},
 			strategies = {
 				chat = {
 					adapter = "gemini", -- openai, gemini, anthropic, ollama 等を指定
