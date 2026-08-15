@@ -22,3 +22,7 @@ if command -v npm > /dev/null; then
   npm config set min-release-age 15
   export PATH="$PATH:$HOME/.cache/npm/bin"
 fi
+
+bw_unlock() {
+  export BW_SESSION=$(bw unlock --raw)
+}
