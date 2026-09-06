@@ -216,6 +216,38 @@ return require("lazy").setup({
 			},
 		}
 	},
+	{
+		{
+			"CopilotC-Nvim/CopilotChat.nvim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+			},
+			build = "make tiktoken",
+			opts = function()
+				require("config/copilot-chat")
+				return {
+					model = 'gemini-3.1-pro-preview', -- AI model to use
+					temperature = 0.1, -- Lower = focused, higher = creative
+					window = {
+						layout = 'vertical', -- 'vertical', 'horizontal', 'float'
+						width = 0.5, -- 80% of screen width
+						--height = 0.8, -- 80% of screen height
+					},
+					-- auto_insert_mode = true, -- Enter insert mode when opening
+					headers = {
+						user = '👤 You',
+						assistant = '🤖 Copilot',
+						tool = '🔧 Tool',
+					},
+					mappings = {
+						reset = {
+							normal = false,
+						}
+					},
+				}
+			end,
+		},
+	},
 
 	-- インデントラインを表示
 	{
