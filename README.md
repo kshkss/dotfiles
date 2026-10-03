@@ -56,3 +56,9 @@ uv tool install pyright
 ```bash
 pacman -S lua-language-server
 ```
+
+## Agent Client Protocol (ACP)
+### Codex
+```bash
+pnpm add -g @agentclientprotocol/codex-acp
+```

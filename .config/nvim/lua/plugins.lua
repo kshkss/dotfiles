@@ -170,10 +170,10 @@ return require("lazy").setup({
 			},
 			strategies = {
 				chat = {
-					adapter = "gemini", -- openai, gemini, anthropic, ollama 等を指定
+					adapter = "codex", -- openai, gemini, anthropic, ollama 等を指定
 					roles = {
 						user = '👤 You',
-						llm = '🤖 Copilot',
+						llm = '🤖 Codex',
 					},
 					keymaps = {
 						send = {
@@ -184,35 +184,24 @@ return require("lazy").setup({
 						},
 						close = {
 							modes = {
-								n = "<C-c>", -- ノーマルモードのqで閉じる
+								n = "<C-c>", -- ノーマルモードのCtrl-Cで閉じる
 							},
 						},
 					},
 				},
-				inline = { adapter = "gemini" },
-				agent = { adapter = "gemini" },
+				inline = { adapter = "copilot", model = "auto" },
+				agent = { adapter = "anthropic" },
 			},
 			adapters = {
-				http = {
-					gemini = function()
-						return require("codecompanion.adapters").extend("gemini", {
-							env = {
-								api_key = "GEMINI_API_KEY", -- 読み込む環境変数名を指定（デフォルトは GEMINI_API_KEY）
-							},
-							schema = {
-								model = {
-									default = "gemini-3.6-flash", -- 使用するモデルを指定
-								},
-								temperature = {
-									default = 0.7, -- 出力の多様性 (0.0 〜 2.0)
-								},
-								max_tokens = {
-									default = 8192, -- 出力の最大トークン数
-								},
+				acp = {
+					codex = function()
+						return require("codecompanion.adapters").extend("codex", {
+							defaults = {
+								auth_method = "chat-gpt",
 							},
 						})
 					end,
-				}
+				},
 			},
 		}
 	},
