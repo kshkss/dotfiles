@@ -20,12 +20,7 @@ if command -v fnm > /dev/null; then
 	fnm use lts-latest
 fi
 if command -v npm > /dev/null; then
-  if [ ! -e "$HOME/.cache/npm" ]; then
-	  mkdir -p "$HOME/.cache/npm"
-	  npm config set prefix "$HOME/.cache/npm"
-  fi
   npm config set min-release-age 15
-  export PATH="$PATH:$HOME/.cache/npm/bin"
 fi
 if command -v pnpm > /dev/null; then
 	export PNPM_HOME="$HOME/.local/share/pnpm"
