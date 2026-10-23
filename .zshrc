@@ -32,7 +32,6 @@ if command -v pnpm > /dev/null; then
 	if [ ! -e $PNPM_HOME ]; then
 		mkdir -p $PNPM_HOME
 	fi
-	export PATH="$PATH:$PNPM_HOME/bin"
 	pnpm config set minimum-release-age 22000
 fi
 
