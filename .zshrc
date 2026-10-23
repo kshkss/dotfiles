@@ -14,6 +14,11 @@ cdrepo() {
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
+# Node.js
+if command -v fnm > /dev/null; then
+	eval "$(fnm env --use-on-cd --shell zsh)"
+	fnm use lts-latest
+fi
 if command -v npm > /dev/null; then
   if [ ! -e "$HOME/.cache/npm" ]; then
 	  mkdir -p "$HOME/.cache/npm"
@@ -21,6 +26,14 @@ if command -v npm > /dev/null; then
   fi
   npm config set min-release-age 15
   export PATH="$PATH:$HOME/.cache/npm/bin"
+fi
+if command -v pnpm > /dev/null; then
+	export PNPM_HOME="$HOME/.local/share/pnpm"
+	if [ ! -e $PNPM_HOME ]; then
+		mkdir -p $PNPM_HOME
+	fi
+	export PATH="$PATH:$PNPM_HOME/bin"
+	pnpm config set minimum-release-age 22000
 fi
 
 bw_unlock() {
