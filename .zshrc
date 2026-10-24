@@ -20,6 +20,7 @@ if command -v fnm > /dev/null; then
 	fnm use lts-latest
 fi
 if command -v npm > /dev/null; then
+  npm config delete prefix
   npm config set min-release-age 15
 fi
 if command -v pnpm > /dev/null; then
