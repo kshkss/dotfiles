@@ -131,7 +131,6 @@ return require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 		},
 		config = function(plugin, opts)
-			load_sops_secrets()
 			require("codecompanion").setup(opts)
 		end,
 		keys = {
